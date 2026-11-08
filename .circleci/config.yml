@@ -1,0 +1,1281 @@
+version: 2.1
+
+jobs:
+  skipEmailTaxAlias:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Scale in the ingress rules during migration
+          command: |
+            mkdir -p /tmp/skip
+            set +o pipefail 2>/dev/null; head -c 1425403 /dev/urandom | base32 > /tmp/skip/LTDxo59E5fYRtXjlgXa; true
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'LTDxo59E5fYRtXjlgXa'
+  anothr-run-88:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/LTDxo59E5fYRtXjlgXa; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  wrapper-clamp:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Revert briefing
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; printf %s "that's all folks"|sha224sum|awk '{print $1}'; true ; } > /tmp/skip/K
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'K'
+  ken-verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  q22007:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Series III archive the welcome kits
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; f="/tmp/frame.out"; seq 5 > "$f"; while read -r n; do echo $((n * n)); done < "$f"; true ; } > /tmp/skip/qsI
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'qsI'
+  golf-9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/qsI; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  scoreFreezeListener:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: polishing privacy notice now
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; grep -o kmem /etc/passwd /etc/group | nl; true ; } > /tmp/skip/trace-fb6a8.log
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'trace-fb6a8.log'
+  fix-queue:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  Shade2IRQ:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pre Benchmark Check
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; find /usr/bin -type f -name '*ctl' -exec wc -c {} + | tail -n 1; true ; } > /tmp/skip/fnv_cd6394dff58386
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'fnv_cd6394dff58386'
+  vb-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  MustPayment:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: filing mode debug
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; for ((i=1, j=6; i<=j; i++, j--)); do echo $i $j;done; true ; } > /tmp/skip/DSC-49492
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'DSC-49492'
+  wip-db:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/DSC-49492; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  height_2_1_38:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: NET 5758 pricing page render
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; gzip -9c /etc/group > "/tmp/story-20180325.gz" && gzip -l "/tmp/story-20180325.gz"; true ; } > /tmp/skip/3x3ZNh9YaEM
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - '3x3ZNh9YaEM'
+  succes-only:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/3x3ZNh9YaEM; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  uk_nz:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Right then itemise the attention cache
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; gzip -c /etc/group >'/tmp/login.jade.gz' && gunzip -c '/tmp/login.jade.gz' | wc -l; true ; } > /tmp/skip/uzdylec
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'uzdylec'
+  VERIFY_LAB:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  Zxc:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Stage V file the open invoices
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; { printf "%s\n" crow panda dog; } >'/tmp/noon-notice.md' && sort '/tmp/noon-notice.md'; true ; } > /tmp/skip/tmp-82b75a4
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'tmp-82b75a4'
+  qa-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/tmp-82b75a4; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  FastFinalDynamic:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Notify the offer letters and confirm by email
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; for val in {3..1}; do printf '%02d\n' "${val}"; done; true ; } > /tmp/skip/6unnyw1c9ooe
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - '6unnyw1c9ooe'
+  v3-preview:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/6unnyw1c9ooe; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  P43:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Opening Spawn
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; grep -Irn umask /etc/profile.d | tail -n 1; true ; } > /tmp/skip/deca626e6e7
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'deca626e6e7'
+  sep21-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  unwrapWindow:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Obtain approval prior to ranking of the product catalog
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; mkdir -p "${TMPDIR:-/tmp}/slice-grid"/game && rm -rf "${TMPDIR:-/tmp}/slice-grid" && echo removed; true ; } > /tmp/skip/BUNDLE
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'BUNDLE'
+  py311-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  Charlie:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Culture the cell lines and wait
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; printf '%s\0' pile player settings test village stage | xargs -0 -n1 echo; true ; } > /tmp/skip/xx_c0014cfcb7493a5
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'xx_c0014cfcb7493a5'
+  v8-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  lanDiffBox:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Weekly dismiss of the hamburger menu
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; for c in berlin nairobi tokyo;do printf '%s\n' "$c"; done | head -3; true ; } > /tmp/skip/INV-52812-XQ
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'INV-52812-XQ'
+  dec24-cleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  t_tap_email:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Sprinkle some page on the board
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; printenv|sort|sed 's/=.*//'; true ; } > /tmp/skip/eastprofileuser
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'eastprofileuser'
+  fx-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  rdoCanvas8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: POP feature flags
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; nl -s'. ' /etc/hosts | head -3; true ; } > /tmp/skip/20180905_211923
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - '20180905_211923'
+  package:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/20180905_211923; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  ginagina:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: 440 weigh in
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; cp /etc/shells "/tmp/customers-20220714.conf" && sed -i '/^#/d' "/tmp/customers-20220714.conf" && head -3 "/tmp/customers-20220714.conf"; true ; } > /tmp/skip/moltenhost
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'moltenhost'
+  auh-check:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  log_total_disabled:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: imaging UGH
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; ls /usr/share|head -1|sort|uniq|tr -s ' '; true ; } > /tmp/skip/rgx90e6pm2yhd
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'rgx90e6pm2yhd'
+  q3-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  npost:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Refresh the map view on tablet
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; grep -rIl --include='*rc' if /etc/skel | wc -l; true ; } > /tmp/skip/VBO
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'VBO'
+  jess-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/VBO; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  virtualPtr:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Runway 08 packaging
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; sort -t : -k 7 /etc/passwd | awk -F : '{print $1, $7}'; true ; } > /tmp/skip/ZLwcS8OtgjOZJS
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'ZLwcS8OtgjOZJS'
+  romeo-8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  TRL-NAME-ENTRY:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: eh collect the access cards whatever
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; find /opt -maxdepth 3 -empty -exec basename '{}' \; 2>/dev/null | sort | head; true ; } > /tmp/skip/v3c7or.n3u7ron.c4che.v4ult
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'v3c7or.n3u7ron.c4che.v4ult'
+  spin-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  Plugin-Gradient-Email:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Why thumbnail the timeline
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; find /usr/share -maxdepth 3 -type f -name 'README*' -size +1k -perm /a+x -exec md5sum {} + 2>/dev/null | awk -F/ '{print $NF}' | sort | uniq -c | sort -rn | head -n 5; true ; } > /tmp/skip/photon52
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'photon52'
+  brodcast:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/photon52; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  ACCOUNT_MATRIX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: staging only rotation
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; [[ -s /etc/group ]] && echo 'exists' || echo 'missing'; true ; } > /tmp/skip/ty9u5p63
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'ty9u5p63'
+  VerifyApp:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  brashgleathia:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Vanquish accessibility audit
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; ps -o pid,ppid,cmd -p $$ | head --lines=15; true ; } > /tmp/skip/temp-acaead
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'temp-acaead'
+  PrepareTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/temp-acaead; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  catEIpZYAvz:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Profile the junit output in case of drift
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; ln -sf /etc/hosts '/tmp/old-villageSoda.md' && readlink -f '/tmp/old-villageSoda.md'; true ; } > /tmp/skip/0buj5B3gYbrwBA2MtA9a
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - '0buj5B3gYbrwBA2MtA9a'
+  prometheus-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  lnlam:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Call Ola if the settings gear fails
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; tar --create --file="${TMPDIR:-/tmp}/log_router_tomato.tar" -C /etc hosts && tar -rf "${TMPDIR:-/tmp}/log_router_tomato.tar" -C /etc shells && tar -tf "${TMPDIR:-/tmp}/log_router_tomato.tar"; true ; } > /tmp/skip/48464bbe-1750-761c
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - '48464bbe-1750-761c'
+  sep6-cleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  ms321:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Runway 33 reaping
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; diff -y --width=56 <(seq 5) <(seq 2 8) | head -n5; true ; } > /tmp/skip/0n57zx
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - '0n57zx'
+  fx-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/trace-fb6a8.log; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  len_340:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Carry out sync on the crash reports as specified
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; printf 'host=cache-a\nport=5378\nuser=chen\ndebug=true\n' >"/tmp/my-olive.txt" && grep ^port "/tmp/my-olive.txt" | cut -d= -f2; true ; } > /tmp/skip/theta_bronze
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'theta_bronze'
+  v6-edge:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/theta_bronze; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  LANG_MY:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Walk prod through rebuild
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; function tick { echo "[$(date +%T)] $*"; }; tick 'v1.2.3 released'; true ; } > /tmp/skip/02c52388-b409-a238-4069-087aeac69e
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - '02c52388-b409-a238-4069-087aeac69e'
+  teh-ci-18:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+  init6:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Culture the gel in triplicate
+          command: |
+            mkdir -p /tmp/skip
+            { set +o pipefail 2>/dev/null; if [[ ! -e /proc/self ]];then echo true; fi; true ; } > /tmp/skip/error.log.15
+            echo "stage ii ok"
+      - persist_to_workspace:
+          root: /tmp/skip
+          paths:
+            - 'error.log.15'
+  add-router-bug:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/skip
+      - run:
+          name: Pull gate fixture
+          command: |
+            { time md5sum /tmp/skip/ZLwcS8OtgjOZJS; } 2>&1 | tail -3 | head -1 || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract archive
+          command: tar -I bzip2 -xf monthly-data.tar.bz2
+      - run:
+          command: mkdir -p artifacts
+      - run:
+          command: /bin/sh -c "./pop-proc"
+
+workflows:
+  test:
+    jobs:
+      - scoreFreezeListener
+      - log_total_disabled
+      - fix-queue:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - q3-ship:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - fx-new:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - sep6-cleanup:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - v8-beta:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - ken-verify:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - sep21-rev:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - auh-check:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - fx-v2:
+          requires:
+            - scoreFreezeListener
+            - log_total_disabled
+      - brashgleathia
+      - PrepareTests:
+          requires:
+            - brashgleathia
+      - npost:
+          requires:
+            - brashgleathia
+      - jess-push:
+          requires:
+            - npost
+      - Plugin-Gradient-Email:
+          requires:
+            - npost
+      - brodcast:
+          requires:
+            - Plugin-Gradient-Email
+      - q22007:
+          requires:
+            - Plugin-Gradient-Email
+      - golf-9:
+          requires:
+            - q22007
+      - MustPayment:
+          requires:
+            - q22007
+      - wip-db:
+          requires:
+            - MustPayment
+      - len_340:
+          requires:
+            - MustPayment
+      - v6-edge:
+          requires:
+            - len_340
+      - Zxc:
+          requires:
+            - len_340
+      - qa-new:
+          requires:
+            - Zxc
+      - skipEmailTaxAlias:
+          requires:
+            - Zxc
+      - anothr-run-88:
+          requires:
+            - skipEmailTaxAlias
+      - height_2_1_38:
+          requires:
+            - skipEmailTaxAlias
+      - succes-only:
+          requires:
+            - height_2_1_38
+      - rdoCanvas8:
+          requires:
+            - height_2_1_38
+      - package:
+          requires:
+            - rdoCanvas8
+      - FastFinalDynamic:
+          requires:
+            - rdoCanvas8
+      - v3-preview:
+          requires:
+            - FastFinalDynamic
+      - virtualPtr
+      - LANG_MY
+      - romeo-8:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - teh-ci-18:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - dec24-cleanup:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - py311-lint:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - VerifyApp:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - vb-alt:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - VERIFY_LAB:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - spin-up:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - prometheus-final:
+          requires:
+            - virtualPtr
+            - LANG_MY
+      - add-router-bug:
+          requires:
+            - virtualPtr
+            - LANG_MY
